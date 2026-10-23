@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 st.set_page_config(page_title='Fliff $1 → $50 Scanner', page_icon='🎯', layout='wide')
 st.title('🎯 Fliff $1 → $50 Value Scanner')
 st.caption('Read-only odds scanner. No bets placed. $50 total payout on $1 requires decimal odds ≥50 (+4900).')
-key = os.getenv('PROPLINE_API_KEY') or st.secrets.get('PROPLINE_API_KEY', '')
+key = os.getenv('PROPLINE_API_KEY', '').strip()
 if not key:
     st.warning('Set PROPLINE_API_KEY in your deployment secrets. Never commit your key to GitHub.')
     st.stop()
